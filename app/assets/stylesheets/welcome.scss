@@ -1,3 +1,14 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#image{
+  position: relative;
+  background-image: url("https://ww1.sinaimg.cn/large/006y8lVajw1fbyczk5qzzj308c0603yh.jpg");
+  height: 550px;
+  background-size:cover;
+}
+
+.position{
+  margin-top: 150px;
+}

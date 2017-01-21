@@ -5,7 +5,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
 
     if @job.is_hidden
-      flash[:warning] = "This Job already archieved"
+      flash[:warning] = 'This Job already archieved'
       redirect_to root_path
     end
   end
@@ -17,9 +17,10 @@ class JobsController < ApplicationController
             when 'by_upper_bound'
               Job.published.order('wage_upper_bound DESC')
             else
-              Job.published.recent
+              Job.published.recent.published.search(params[:search])
             end
-    @jobs = @jobs.recent.paginate(:page => params[:page], :per_page => 5)
+
+    @jobs = @jobs.recent.paginate(page: params[:page], per_page: 5)
   end
 
   def new
