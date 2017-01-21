@@ -11,13 +11,15 @@
     </div>
     <div class="panel-body">
         <div class="trix-content">
-            <p> <%= simple_format(resume.content) %> </p>
+            <p>
+                <%= simple_format(resume.content) %>
+            </p>
         </div>
 
         <hr>
 
         <% if resume.attachment.present? %>
-          <i class="fa fa-paperclip"> </i>
+          <i class="fa fa-paperclip"></i>
           <%= link_to("Download Resume", resume.attachment_url) %>
         <% else %>
            No Attachment
